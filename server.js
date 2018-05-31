@@ -73,6 +73,7 @@ app.get('/api/access_token/:code', (req, res) => {
       reqProxy.end();
 });
 
+//https://stackoverflow.com/questions/10435407/proxy-with-express-js
 app.use('/api', (req, res) => {
     const url = `${generalOptions.url}${req.url}`;
     const headers = {
