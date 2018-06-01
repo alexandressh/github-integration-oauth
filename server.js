@@ -3,9 +3,10 @@ const express = require('express')
 const https = require('https');
 const request = require('request');
 const morgan = require('morgan');
+const path = require('path');
 const app = express()
 
-const port = 4000;
+const port = 8080;
 
 require('dotenv').config();
 
@@ -86,4 +87,8 @@ app.use('/api', (req, res) => {
     request(options).pipe(res);
 });
 
-app.listen(port, () => console.log('Example app listening on port 4000!'))
+app.set('views', './app/views');
+app.use('/', express.static(path.resolve('./github-integration')));
+app.use('/callback', express.static(path.resolve('./github-integration')));
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))

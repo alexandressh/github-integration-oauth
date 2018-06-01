@@ -16,7 +16,7 @@ export class GithubService {
   ) { 
     const info = window.localStorage.getItem('token');
     const infoParsed = JSON.parse(info);
-    this.token = infoParsed.access_token;
+    this.token = infoParsed && infoParsed.access_token;
   }
 
   getToken(code: string) {
