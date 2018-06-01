@@ -87,8 +87,7 @@ app.use('/api', (req, res) => {
     request(options).pipe(res);
 });
 
-app.set('views', './app/views');
-app.use('/', express.static(path.resolve('./github-integration')));
-app.use('/callback', express.static(path.resolve('./github-integration')));
+app.use('/', express.static('github-integration'));
+app.use('/callback', express.static('github-integration'));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
