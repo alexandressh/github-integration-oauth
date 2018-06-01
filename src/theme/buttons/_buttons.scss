@@ -1,0 +1,16 @@
+.button {
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+.button__primary {
+    background: $bg-primary linear-gradient(180deg, mix($bg-secondary, $bg-primary, 15%), $bg-primary) repeat-x;
+    color: $color-primary;
+
+    &:hover {
+        background: $bg-primary linear-gradient(180deg, mix(darken($bg-secondary, 10%), $bg-primary, 15%), $bg-primary) repeat-x;
+    }
+}

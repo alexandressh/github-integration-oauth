@@ -1,0 +1,37 @@
+.card {
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.card__body {
+    margin-bottom: 15px;
+}
+
+.card__bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card__paragraph {
+    margin: 5px 0;
+    white-space: normal;
+}
+
+
+.card__primary {
+    background: $bg-secondary;
+    border: 2px solid darken($bg-secondary, 5%);
+}
+
+.card__transparent {
+    background: transparent;
+    color: $color-primary;
+}

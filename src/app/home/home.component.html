@@ -1,3 +1,29 @@
-<p>
-  home works!
-</p>
+<section class="home">
+  <div class="card card__transparent home__card" *ngFor="let repo of repos">
+    <a [href]="repo.url">
+      <h3 class="card__text" title="{{repo.name}}">{{repo.name}}</h3>
+    </a>
+
+    <div class="card__body">
+      <span class="card__text" *ngIf="repo.private">Private</span>
+      <span class="card__text" *ngIf="!repo.private">Public</span>
+  
+      <p class="card__paragraph">{{repo.description}}</p>
+    </div>
+
+    
+    <div class="card__bottom">
+      <span class="card__text">{{repo.language || '--'}}</span>
+
+      <span class="card__text">
+        <i class="fa fa-eye"></i>
+        {{repo.watchers}}
+        <i class="fa fa-star"></i>
+        {{repo.stargazers}}
+        <i class="fa fa-code-fork"></i>
+        {{repo.forks}}
+      </span>
+    </div>
+    <hr/>
+  </div>
+</section>
