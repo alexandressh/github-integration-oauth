@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { Subject, Observable } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
 
 import { Repository } from '../models/repository';
@@ -10,6 +11,7 @@ import { Repository } from '../models/repository';
 })
 export class GithubService {
   private token: string;
+  private tokenSubscription = new Subject<string>();
 
   constructor(
     private http: HttpClient
@@ -17,6 +19,7 @@ export class GithubService {
     const info = window.localStorage.getItem('token');
     const infoParsed = JSON.parse(info);
     this.token = infoParsed && infoParsed.access_token;
+    this.tokenSubscription.next(this.token);
   }
 
   getToken(code: string) {
@@ -35,6 +38,20 @@ export class GithubService {
     return this.http.get('api/user/repos', options).pipe(
       map(this.mapRepos.bind(this))
     );
+  }
+
+  isUserLoggedIn() {
+    return !!this.token;
+  }
+
+  logout() {
+    window.localStorage.clear();
+    this.token = null;
+    this.tokenSubscription.next(null);
+  }
+
+  getTokenEventEmitter(): Observable<string> {
+    return this.tokenSubscription.asObservable();
   }
 
   private mapRepos(data): Repository[] {
@@ -59,6 +76,7 @@ export class GithubService {
     this.token = tokenInfo.access_token;
     const jsonString = JSON.stringify(tokenInfo)
     window.localStorage.setItem('token', jsonString);
+    this.tokenSubscription.next(this.token);
   }
 
 

@@ -5,11 +5,15 @@
     border-radius: 10px;
 }
 
+.card__header {
+    align-self: flex-start;
+}
+
 .card__body {
     margin-bottom: 15px;
 }
 
-.card__bottom {
+.card__footer {
     display: flex;
     justify-content: space-between;
 }

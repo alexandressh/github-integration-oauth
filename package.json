@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start:dev": "ng serve --proxy-config './src/proxy.conf.json' --disable-host-check",
-    "start": "node ./dist/server.js",
+    "start": "ng serve",
     "build": "npm run build:ui && npm run build:server",
     "build:ui": "ng build --prod",
     "build:server": "webpack --config webpack.config.js --progress --colors",
