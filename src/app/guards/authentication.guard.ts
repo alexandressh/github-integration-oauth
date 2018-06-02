@@ -9,7 +9,7 @@ import { GithubService } from '../services/github.service';
 @Injectable({
   providedIn: 'root'
 })
-export class HomeGuard implements CanActivate {
+export class AuthenticationGuard implements CanActivate {
   constructor(
     private githubService: GithubService,
     private router: Router,

@@ -18,6 +18,16 @@
     &:hover {
         background-image: none;
     }
+
+    &-disabled {
+        background-image: none;
+        opacity: 0.7;
+
+        &:hover {
+            
+            pointer-events: none;
+        }
+    }
 }
 
 .button__link {

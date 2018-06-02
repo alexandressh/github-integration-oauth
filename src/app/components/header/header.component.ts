@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 
-import { GithubService } from '../services/github.service';
+import { GithubService } from '../../services/github.service';
 
 @Component({
   selector: 'app-header',

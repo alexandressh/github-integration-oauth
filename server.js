@@ -5,13 +5,14 @@ const request = require('request');
 const morgan = require('morgan');
 const path = require('path');
 const app = express()
-
 const port = 4000;
 
 require('dotenv').config();
 
+const clientId = process.env.CLIENT_ID;
+
 const body = {
-    client_id: process.env.CLIENT_ID,
+    client_id: clientId,
     client_secret: process.env.CLIENT_SECRET
 };
 
@@ -30,23 +31,7 @@ const generalOptions = {
     headers: {}
 };
 
-
 app.use(morgan('tiny'));
-
-// app.get('/api/access_token/:code', (req, res) => {
-//     const url =  'https://github.com/login/oauth/access_token';
-//     const authOptions = {
-//         uri: 'https://github.com/login/oauth/access_token',
-//         headers: {
-//             'User-Agent': 'alexandressh',
-//             'accept': 'application/json'
-//         },
-//         json: body
-//     };
-
-//     const r = request.post(authOptions);
-//     req.pipe(r).pipe(res);
-// });
 
 
 app.get('/api/access_token/:code', (req, res) => {
@@ -72,6 +57,13 @@ app.get('/api/access_token/:code', (req, res) => {
       
       reqProxy.write(bodyString)
       reqProxy.end();
+});
+
+app.use('/api/login_url', (req, res) => {
+    const data = {
+        url: `https://github.com/login/oauth/authorize?scope=user:email&client_id=${clientId}`
+    }
+    res.send(data);
 });
 
 //https://stackoverflow.com/questions/10435407/proxy-with-express-js

@@ -1,8 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GithubService } from '../services/github.service';
-import { Repository } from '../models/repository';
+
 import { Subscription } from 'rxjs';
+
+import { GithubService } from '../../services/github.service';
+import { Repository } from '../../models/repository';
 
 @Component({
   selector: 'app-home',

@@ -22,6 +22,13 @@ export class GithubService {
     this.tokenSubscription.next(this.token);
   }
 
+  getGithubLoginUrl(): Observable<string> {
+    const url = 'api/login_url'
+    return this.http.get(url).pipe(
+      map((data: any) => data.url)
+    );
+  }
+
   getToken(code: string) {
     const url = `api/access_token/${code}`;
     return this.http.get(url).pipe(

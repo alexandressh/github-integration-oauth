@@ -7,10 +7,10 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { CallbackComponent } from './callback/callback.component';
-import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './sections/login/login.component';
+import { HomeComponent } from './sections/home/home.component';
+import { CallbackComponent } from './sections/callback/callback.component';
+import { HeaderComponent } from './components/header/header.component';
 import { RepositoryComponent } from './components/repository/repository.component';
 
 @NgModule({
