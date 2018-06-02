@@ -67,7 +67,10 @@ export class GithubService {
         watchers: repo.watchers_count,
         language: repo.language,
         forks: repo.forks,
-        isFork: repo.fork
+        isFork: repo.fork,
+        ownerName: repo.owner.login,
+        ownerPicture: repo.owner.avatar_url,
+        ownerUrl: repo.owner.html_url
       } as Repository;
     });
   }

@@ -1,17 +1,21 @@
+//PAGE STRUCTURE
 .page {
     height: 100%;
-    background: $bg-page linear-gradient(180deg, mix($bg-page, darken($bg-page, 50%), 5%), darken($bg-page, 20%)) repeat-x;
-    color: $color-page;
+    background: $bg-primary;
+    color: $color-primary;
     display: flex;
     flex-direction: column;
     overflow: auto;
 }
+//PAGE TEXT
+//PAGE TYPES
 
-
+//PAGE MIXIN
 .page__card {
     margin-top: 15%;
     width: 35%;
     margin-left: auto;
     margin-right: auto;
     min-width: 200px;
+    flex-direction: column;
 }

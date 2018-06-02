@@ -9,4 +9,7 @@ export interface Repository {
     language: string;
     forks: number;
     isFork: boolean;
+    ownerPicture: string;
+    ownerName: string;
+    ownerUrl: string;
 }

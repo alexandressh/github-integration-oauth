@@ -1,27 +1,37 @@
+// CARD STRUCTURE
 .card {
-    padding: 15px 20px;
     display: flex;
-    flex-direction: column;
-    border-radius: 10px;
+    padding: 15px;
+
+    &__image {
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    &__header {
+        align-self: flex-start;
+        margin-bottom: 10px;
+    }
+
+    &__body {
+        margin-bottom: 15px;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
-.card__header {
-    align-self: flex-start;
-}
-
-.card__body {
-    margin-bottom: 15px;
-}
-
-.card__footer {
-    display: flex;
-    justify-content: space-between;
-}
-
+// CARD TEXT
 .card__text {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+
+    &-inline {
+        display: inline;
+    }
 }
 
 .card__paragraph {
@@ -29,13 +39,14 @@
     white-space: normal;
 }
 
-
+// CARD TYPES
 .card__primary {
-    background: $bg-secondary;
-    border: 2px solid darken($bg-secondary, 5%);
+    background: $bg-card-primary;
+    border: 1px solid $border-primary;
 }
 
 .card__transparent {
     background: transparent;
-    color: $color-primary;
 }
+
+//CARD MIXIN

@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 @import './variables';
 @import '../node_modules/font-awesome/scss/font-awesome';
 @import './src/theme/theme';
@@ -10,7 +10,7 @@
 html,
 body {
     height: 100%;
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -23,5 +23,6 @@ body {
 }
 
 a {
+    text-decoration: none;
     color: inherit;
 }

@@ -7,9 +7,24 @@ $color3: rgba(168, 218, 220, 1);
 $color4: rgba(69, 123, 157, 1);
 $color5: rgba(29, 53, 87, 1);
 
-$bg-page:           $color4;
-$color-page:        $color5;
-$bg-primary:        $color4;
-$bg-secondary:      $color2;
-$bg-danger:         $color1;
-$color-primary:     $color2;
+$color00: #FFFFFF;
+$color01: #586069;
+$color02: #24292e;
+$color03: #f9f9f9;
+$color04: #269f42;
+$color05: #d8dee2;
+$color06: #0366d6;
+
+
+$bg-primary:        $color03;
+$color-primary:     $color01;
+
+$bg-secondary:      $color02;
+$color-secondary:   $color00;
+
+$bg-success:        $color04;
+
+$border-primary:    $color05;
+$bg-card-primary:   $color00;
+
+$color-link-primary: $color06;

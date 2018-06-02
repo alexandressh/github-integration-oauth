@@ -1,12 +1,13 @@
 @import '../../theme/palette';
 
 .header {
-    background: $bg-primary;
+    background: $bg-secondary;
+    color: $color-secondary;
     display: flex;
     justify-content: space-between;
     padding: 15px 20px;
 }
 
 .header__text {
-    color: $color-primary;
+    
 }
