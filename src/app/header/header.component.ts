@@ -1,7 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { GithubService } from '../services/github.service';
+
 import { Subscription } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
+
+import { GithubService } from '../services/github.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +17,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   constructor(
     private githubService: GithubService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -22,13 +26,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
     const observer = this.githubService.getTokenEventEmitter();
     this.subscription = observer.subscribe(this.onTokenChanged.bind(this));
   }
-
+  
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-
+  
   logout() {
     this.githubService.logout();
+    this.toastr.success('You are logged out');
     this.router.navigate(['/']);
   }
 

@@ -8,14 +8,6 @@
 }
 
 //BUTTON TEXT
-.button__link {
-    color: $color-link-primary;
-
-    &:hover {
-        text-decoration: underline;
-    }
-
-}
 
 //BUTTON TYPES
 .button__primary {
@@ -28,4 +20,20 @@
     }
 }
 
-//BUTTON MIXIN
+.button__link {
+    color: $color-link-primary;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.button-dark__link {
+    color: darken($color-secondary, 7%);
+
+    &:hover {
+        color: $color-secondary;
+    }
+}
+
+//BUTTON MIXES

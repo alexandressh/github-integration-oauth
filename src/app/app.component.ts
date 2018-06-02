@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { GithubService } from './services/github.service';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +6,6 @@ import { GithubService } from './services/github.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(
-    private gs: GithubService
-  ) {}
+  constructor() {}
 
-  makeRequest() {
-    
-  }
 }

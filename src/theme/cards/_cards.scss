@@ -4,8 +4,8 @@
     padding: 15px;
 
     &__image {
-        border-radius: 5px;
-        margin-top: 10px;
+        border-radius: 3px;
+        margin-top: 5px;
     }
 
     &__header {
@@ -45,8 +45,4 @@
     border: 1px solid $border-primary;
 }
 
-.card__transparent {
-    background: transparent;
-}
-
-//CARD MIXIN
+//CARD MIXES

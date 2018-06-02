@@ -1,6 +1,9 @@
 @import './palette';
-@import './page/page';
-@import './cards/cards';
+
+@import 'reset/reset';
+
 @import './buttons/buttons';
-@import './loader/loader';
+@import './cards/cards';
 @import './icon/icon';
+@import './loader/loader';
+@import './page/page';

@@ -55,7 +55,6 @@ export class GithubService {
   }
 
   private mapRepos(data): Repository[] {
-    console.log(data)
     return data.map((repo) => {
       return {
         id: repo.id,
@@ -81,6 +80,4 @@ export class GithubService {
     window.localStorage.setItem('token', jsonString);
     this.tokenSubscription.next(this.token);
   }
-
-
 }

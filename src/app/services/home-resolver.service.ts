@@ -10,9 +10,7 @@ import { map, take } from 'rxjs/operators';
 export class HomeResolverService implements Resolve<any>{
 
   constructor(
-    private githubService: GithubService,
-    private route: Router
-
+    private githubService: GithubService
   ) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {

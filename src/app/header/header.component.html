@@ -1,10 +1,17 @@
 <div class="header">
+  
   <h3 class="header__text">
     <i class="fa fa-github fa-lg"></i>
     GitHub - OAuth Integration
   </h3>
+
   <div class="header__text" *ngIf="isLoggedIn">
-    <a routerLink="" routerLinkActive="router-link-active"  (click)="logout()">Logout</a>
+    <a routerLink="" 
+       class="button-dark__link" 
+       routerLinkActive="router-link-active"  
+       (click)="logout()">
+       Logout
+    </a>
   </div>
   
 </div>

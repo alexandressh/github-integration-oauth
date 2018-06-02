@@ -1,7 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRouteSnapshot, Router, ActivatedRoute } from '@angular/router';
-import { GithubService } from '../services/github.service';
+
 import { Subscription } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
+
+import { GithubService } from '../services/github.service';
 
 @Component({
   selector: 'app-callback',
@@ -15,7 +18,8 @@ export class CallbackComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private githubService: GithubService
+    private githubService: GithubService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -42,6 +46,7 @@ export class CallbackComponent implements OnInit, OnDestroy {
   }
 
   onError() {
+    this.toastr.error('Login failed, please try again');
     this.router.navigate(['login']);
   }
 
