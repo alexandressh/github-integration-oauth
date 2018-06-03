@@ -22,7 +22,7 @@ Você também vai precisar gerar e adicionar as chaves de desenvolvimento do Git
 
 - Copie e cole as chaves 'Client ID' e 'Client Secret' no arquivo .env
 
-Instalar as dependencias:
+Instalar as dependências:
 - `npm install`
 
 Agora você pode subir o Servidor back-end:
@@ -43,4 +43,4 @@ Para executar os testes você deve rodar `ng test` via [Karma](https://karma-run
 
 ## Demo
 
-Essa aplicação está disponivel em https://github-integration-ddmyrogfxa.now.sh
+Essa aplicação está disponivel em https://github-integration-bxwuhgpjct.now.sh
