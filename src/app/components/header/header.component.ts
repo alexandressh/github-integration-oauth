@@ -26,19 +26,18 @@ export class HeaderComponent implements OnInit, OnDestroy {
     const observer = this.githubService.getTokenEventEmitter();
     this.subscription = observer.subscribe(this.onTokenChanged.bind(this));
   }
-  
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-  
+
   logout() {
     this.githubService.logout();
-    this.toastr.success('You are logged out');
+    this.toastr.success('Logged out');
     this.router.navigate(['/']);
   }
 
   private onTokenChanged(token: string) {
     this.isLoggedIn = !!token;
   }
-
 }

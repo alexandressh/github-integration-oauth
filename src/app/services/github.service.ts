@@ -15,7 +15,7 @@ export class GithubService {
 
   constructor(
     private http: HttpClient
-  ) { 
+  ) {
     const info = window.localStorage.getItem('token');
     const infoParsed = JSON.parse(info);
     this.token = infoParsed && infoParsed.access_token;
@@ -23,7 +23,7 @@ export class GithubService {
   }
 
   getGithubLoginUrl(): Observable<string> {
-    const url = 'api/login_url'
+    const url = 'api/login_url';
     return this.http.get(url).pipe(
       map((data: any) => data.url)
     );
@@ -83,7 +83,7 @@ export class GithubService {
 
   private saveToken(tokenInfo) {
     this.token = tokenInfo.access_token;
-    const jsonString = JSON.stringify(tokenInfo)
+    const jsonString = JSON.stringify(tokenInfo);
     window.localStorage.setItem('token', jsonString);
     this.tokenSubscription.next(this.token);
   }

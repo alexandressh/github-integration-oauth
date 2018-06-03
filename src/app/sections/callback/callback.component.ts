@@ -30,23 +30,28 @@ export class CallbackComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subToken.unsubscribe();
-    this.querySub.unsubscribe();
+    if (this.subToken) {
+      this.subToken.unsubscribe();
+    }
+
+    if (this.querySub) {
+      this.querySub.unsubscribe();
+    }
   }
 
   redirectUser(code) {
-    if(code) {
+    if (code) {
       this.subToken = this.githubService.getToken(code).subscribe(
         () => this.router.navigate(['/home']),
         () => this.onError()
-      )
+      );
     } else {
       this.onError();
     }
   }
 
   onError() {
-    this.toastr.error('Login failed, please try again');
+    this.toastr.error('Login falhou, por favor tente novamente');
     this.router.navigate(['login']);
   }
 

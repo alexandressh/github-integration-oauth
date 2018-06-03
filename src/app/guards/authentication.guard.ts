@@ -19,11 +19,11 @@ export class AuthenticationGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
       const isLoggedIn = this.githubService.isUserLoggedIn();
-      if(isLoggedIn) {
+      if (isLoggedIn) {
         return true;
       }
-      this.toastr.error('Please login');
-      this.router.navigate(['/'])
+      this.toastr.error('Informação de login faltante');
+      this.router.navigate(['/']);
       return false;
   }
 }

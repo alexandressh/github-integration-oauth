@@ -1,27 +1,46 @@
 # GithubIntegration
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
+Esse projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
 
-## Development server
+## Servidor de desenvolvimento
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Para subir um servidor de desenvolvimento você precisa instalar os seguintes softwares:
 
-## Code scaffolding
+- NodeJs (v8.11.2) Para instalar o Node siga as instruções de https://nodejs.org/en/
+- NPM (5.6.0) NPM estará disponivel após a instalação do Node
+- Angular Cli (6.0.3) Para instalar o Angular Cli você pode rodar o comando (depois de ter instalado o NPM) "$ npm install -g @angular/cli", verifique a documentação para detalhes https://github.com/angular/angular-cli/wiki
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Você também vai precisar gerar e adicionar as chaves de desenvolvimento do GitHub:
+- Primeiro renomeie o arquivo template.env para .env
+
+- Vá até https://github.com/settings/developers
+- Clique em 'New OAuth App', e os valores:
+- Name: github-integration-dev
+- Homepage URL: http://localhost:4200/
+- Authorization Callback Url: http://localhost:4200/callback
+- Register Application
+
+- Copie e cole as chaves 'Client ID' e 'Client Secret' no arquivo .env
+
+Instalar as dependencias:
+- `npm install`
+
+Agora você pode subir o Servidor back-end:
+- `node server.js`
+
+E subir o Servidor front-end:
+- `npm run start:dev`
+
+E acessar a aplicação em http://localhost:4200/
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Para gerar a build de produção minificada você deve rodar `npm run build`, os arquivos estarão disponiveis na pasta dist. Para rodar a aplicação em produção você deve entrar na pasta dist e rodar `node server.js`
 
-## Running unit tests
+## Unit Tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para executar os testes você deve rodar `ng test` via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Demo
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Essa aplicação está disponivel em https://github-integration-ddmyrogfxa.now.sh

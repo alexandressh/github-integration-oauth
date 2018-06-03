@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Subscription } from 'rxjs';
 
-import { GithubService } from '../../services/github.service';
 import { Repository } from '../../models/repository';
 
 @Component({
@@ -16,13 +15,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   repos: Repository[];
 
   constructor(
-    private route: ActivatedRoute,
-    private githubService: GithubService
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
     this.subscription = this.route.data.subscribe((data) => {
-      this.repos = data.repos
+      this.repos = data.repos;
     });
   }
 

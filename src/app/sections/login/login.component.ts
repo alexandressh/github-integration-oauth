@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   onError(err) {
-    this.toastr.error('Failed to get login url');
+    this.toastr.error('Error ao comunicar com o servidor');
     this.githubUrl = '';
   }
 

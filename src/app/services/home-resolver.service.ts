@@ -7,7 +7,7 @@ import { map, take } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class HomeResolverService implements Resolve<any>{
+export class HomeResolverService implements Resolve<any> {
 
   constructor(
     private githubService: GithubService
