@@ -1,6 +1,3 @@
-# Teste Front-end - Banco Pan
-Teste para seleção de candidatos(as) a desenvolvedor(a) Front-end no Banco Pan
-
 ## O Desafio
 - Criar uma aplicação que busque os repositórios do Github do usuário que irá se logar
 - A aplicação terá duas telas:
@@ -53,5 +50,3 @@ Teste para seleção de candidatos(as) a desenvolvedor(a) Front-end no Banco Pan
  - Utilizar Webpack
  - Subir a aplicação em algum host cloud
  - Demonstrar conhecimento de Webpack montando um config próprio
-
-*Boa sorte!*
