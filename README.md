@@ -41,6 +41,10 @@ Para gerar a build de produção minificada você deve rodar `npm run build`, os
 
 Para executar os testes você deve rodar `ng test` via [Karma](https://karma-runner.github.io).
 
+## Lint
+
+Você pode fazer a verificação de Lint através do `npm run lint`
+
 ## Demo
 
 Essa aplicação está disponivel em https://github-integration-bxwuhgpjct.now.sh
